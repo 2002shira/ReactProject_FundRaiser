@@ -1,0 +1,65 @@
+.donor-container {
+    max-width: 400px;
+    margin: auto;
+    border: 1px solid light grey;
+    border-radius: 25px;
+    padding: 16px;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 10px rgba(1, 1, 1, 0.1);
+    display: grid;
+    grid-template-columns: auto auto;
+    /* background-color: #f0f0f0; */
+
+}
+
+.code {
+    font-size: 14px;
+    color: black;
+    font-weight: normal;
+    margin: 0;
+}
+
+.divFirst {
+    display: flex;
+    justify-content: space-between;
+    min-width: 400px;
+    max-width: 400px;
+    /* text-align: left */
+    aline-items: center;
+    margin-top: 0px;
+}
+
+.donation-info {
+    font-size: 14px;
+    color: pink;
+    /* padding: 30px; */
+    margin-right: 30px;
+    margin-top: 2px;
+}
+
+.donation-amount {
+    color: green;
+    font-size: 20px;
+}
+
+.donor {
+    padding: 30px;
+    margin-right: 35px;
+}
+
+.donor-name {
+    font-size: 20px;
+    color: black;
+}
+
+.donor-review {
+    font-size: 14px;
+    color: black;
+}
+
+.donor-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color:lightblue
+}

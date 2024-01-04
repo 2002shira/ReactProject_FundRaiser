@@ -1,0 +1,58 @@
+import './App.css';
+import Form from './Form';
+// import { arr_donors } from './Context';
+import { useState, useEffect } from 'react';
+import Donors from "./Donors"
+import {Route,Routes} from "react-router-dom"
+import NavBar from "./NavBar"
+ 
+function App() {
+  const storedArrDonors = JSON.parse(localStorage.getItem('arrDonors')) || [];
+  const storedAutomaticCount = parseInt(localStorage.getItem('automaticCount'), 10) || 531;
+  const [arrDonors, setArrDonors] = useState([]);
+  const [automaticCount, setAutomaticCount] = useState(531);
+  const[totalMoneyDonated, setTotalMoneyDonated]=useState(0);
+
+ //const addDonor=(d)=>{
+ //  setAutomaticCount((prevCount) => prevCount + 1);
+ //// Assign the incremented count as a key to the donor
+ //const donorWithKey = { ...d, key: automaticCount };
+ //    let copy=[...arrDonors,donorWithKey]
+ //    setArrDonors(copy);
+ //    
+ //}
+ useEffect(() => {
+  // Calculate the initial total money donated on component mount
+  const initialTotal = arrDonors.reduce((total, donor) => total + (donor.donatoin_amount || 0), 0);
+  setTotalMoneyDonated(initialTotal);
+}, [arrDonors]);
+
+const addDonor = (d) => {
+  setAutomaticCount((prevCount) => prevCount + 1);
+  const donorWithKey = { ...d, key: automaticCount };
+
+  // Update the state and store in localStorage
+  setArrDonors((prevArrDonors) => [...prevArrDonors, donorWithKey]);
+  setTotalMoneyDonated((prevTotal) => prevTotal + d.donatoin_amount);
+  
+  localStorage.setItem('arrDonors', JSON.stringify([...arrDonors, donorWithKey]));
+  localStorage.setItem('automaticCount', (automaticCount + 1).toString());
+}
+  return (
+  <>
+  <div className='App'>
+  
+  <NavBar/>
+  <div>
+          <p>{totalMoneyDonated} donated by {arrDonors.length} people</p>
+        </div>
+  <Routes>
+    <Route path="AddDonation" element={<Form toAddDonor={addDonor} automaticCount={automaticCount} /> }/>
+    <Route path="listDonations" element={<Donors arr={arrDonors}/>}/>
+  </Routes>
+  
+ </div></>
+  );
+}
+
+export default App;

@@ -1,0 +1,52 @@
+.donations{
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 16px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+#standard-basic {
+    width: 200; /* Adjust the width of the input field */
+    margin-right: 16px; /* Add some spacing to the right of the input field */
+}
+
+.donors-container{
+    align-items:center ;
+    align-content: center;
+    flex-direction: column;
+}
+.isVisible{
+display: block;
+margin: 10px;
+background: none;
+box-shadow: none;
+align-items: center;
+justify-content: cent
+}
+/* .day {
+    background-color: rgb(250, 250, 189);
+}
+
+
+.night {
+    background-color: rgb(119, 119, 255);
+}
+ */
+.isVisible{
+    display: block;
+            margin: 10px;
+            background: none;
+            box-shadow: none;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            align-content: space-around;
+            align-items: baseline;
+            flex-wrap: wrap;
+            color:blue;
+            flex-direction: row-reverse;
+}

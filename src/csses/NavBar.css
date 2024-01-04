@@ -1,0 +1,17 @@
+#navbar{
+    height: 0vh;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+    
+}
+a{
+    padding: 15px;
+    font-size: 2em;
+    text-decoration: none;
+    color: rgb(57, 131, 46);
+
+}
+ hover:a{
+color: pink;
+}

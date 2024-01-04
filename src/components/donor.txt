@@ -1,0 +1,12 @@
+  {/* <div className="donor-container">
+            <div className="donor">
+                <div className="divFirst">
+                    <h2 className="donation-info">
+                        <span className="donation-amount">{donor.donation_amount}₪ </span>
+                        donated {formatDistanceToNow(new Date(donor.donationDate))} ago
+                    </h2>
+                </div>
+                <h2 className="donor-name">{donor.fullName}</h2>
+                <h2 className="donor-review">{donor.review}</h2>
+            </div>
+        </div> */}
